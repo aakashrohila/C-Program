@@ -63,7 +63,6 @@ int main(void) {
         printf("%d",max_abs_diff);
         printf("\n");
         
-	    
 	}
 	
 	return 0;
