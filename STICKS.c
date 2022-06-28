@@ -11,38 +11,42 @@ int main() {
 	
 	while(test_cases--)
 	{
-	    int N,arr[N],i,replic_arr[N];
+	    int N,i;
 	    scanf("%d",&N);
 	    
+	    int arr[N], replic_arr[N];
 	    for(i=0;i<N;i++)
 	    {
 	        scanf("%d",&arr[i]);
 	    }
 	    
 	    quick_sort(arr,0,N);
-	    int m = 0;
+	    int m = -1;
 	    
 	    for(i=0;i<N-1;)
 	    {
 	        if(arr[i]==arr[i+1])
 	        {
-	            replic_arr[m] = arr[i];
 	            m++;
+	            replic_arr[m] = arr[i];
 	            i = i+2;
 	        }
 	        else
 	            i++;
 	    }
 	    
-	   // for(i=0;i<m;i++)
+	   // for(i=0;i<=m;i++)
 	   // {
 	   //     printf("\n%d ",replic_arr[i]);
 	   // }
 	   // printf("\n");
 	   
 
-	    if(m > 1)
-	        printf("%d\n",replic_arr[m-1]*replic_arr[m-2]);
+	    if(m >= 1)
+	    {
+
+	        printf("%d\n",replic_arr[m-1]*replic_arr[m]);
+	    }
 	    else
 	        printf("%d\n",-1);
 	}
